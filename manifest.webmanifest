@@ -1,0 +1,10 @@
+{
+  "name":"Evelin + Silvio Trening",
+  "short_name":"Trening",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f4f5f7",
+  "theme_color":"#111827",
+  "lang":"hr",
+  "description":"Praćenje treninga na spravama za Evelin i Silvija."
+}
