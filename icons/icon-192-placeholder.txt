@@ -1,0 +1,1 @@
+Binary PNG icon generated locally and stored in release artifacts; manifest currently uses scalable SVG with Android maskable support. Raster fallbacks are planned for a follow-up patch if Chromium on the target device requires them.
