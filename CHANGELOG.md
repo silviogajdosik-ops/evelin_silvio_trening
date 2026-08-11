@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.2.4 — 2026-08-11
+
+### Ispravljeno
+- Unos težine i ponavljanja više ne iscrtava cijeli popis nakon svake znamenke pa mobilna tipkovnica ostaje otvorena
+- Označavanje dovršenih serija i cardio vježbi ažurira napredak bez gubitka fokusa
+- Nedovršeni treninzi automatski se spremaju lokalno zasebno za Evelin i Silvija te za treninge A, B i C
+- Privremeni unos ostaje sačuvan nakon zatvaranja ili ponovnog otvaranja aplikacije sve dok se trening ne spremi
+- Putanje ilustracija usklađene su s offline cacheom
+
 ## v1.2.3 — 2026-08-11
 
 ### Ispravljeno

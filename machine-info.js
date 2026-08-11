@@ -25,7 +25,7 @@ Object.entries(MACHINE_GUIDE).forEach(([name,guide])=>{
 });
 
 function machineThumb(id,label){
- return `<div class="machine-thumb"><img class="machine-card-img" src="assets/machines/${id}.webp?v=1.2.3" alt="Ilustracija sprave: ${esc(label)}" width="960" height="960" loading="eager" decoding="async"></div>`;
+ return `<div class="machine-thumb"><img class="machine-card-img" src="assets/machines/${id}.webp" alt="Ilustracija sprave: ${esc(label)}" width="960" height="960" loading="eager" decoding="async"></div>`;
 }
 
 showInfo=function(name){

@@ -1,12 +1,12 @@
-const CACHE='training-tracker-v1.2.3';
+const CACHE='training-tracker-v1.2.4';
 const ASSETS=[
  './',
  './index.html',
- './styles.css?v=1.2.3',
- './pwa.css?v=1.2.3',
- './app.js?v=1.2.3',
- './machine-info.js?v=1.2.3',
- './manifest.webmanifest?v=1.2.3',
+ './styles.css?v=1.2.4',
+ './pwa.css?v=1.2.4',
+ './app.js?v=1.2.4',
+ './machine-info.js?v=1.2.4',
+ './manifest.webmanifest?v=1.2.4',
  './icons/icon.svg',
  './assets/machines/abdominal-crunch.webp',
  './assets/machines/cable-face-pull.webp',
