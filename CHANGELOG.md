@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.2.1 — 2026-08-11
+
+### Ispravljeno
+- Skice sprava sada se pouzdano prikazuju na Androidu i u instaliranoj PWA aplikaciji
+- Uklonjen problem s praznim bijelim poljem kod WebP sprite atlasa
+- Skice su prebačene na zaseban SVG sustav koji radi oštro na svim gustoćama zaslona i offline
+- Ispravljena metadata datoteka verzije koja je još prikazivala staru verziju
+
 ## v1.2.0 — 2026-08-11
 
 ### Dodano
