@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.2.3 — 2026-08-11
+
+### Ispravljeno
+- Oštećeni i nedekodirajući WebP atlas zamijenjen je sa 17 zasebnih WebP ilustracija sprava
+- Info prozor sada koristi običan `<img src="assets/machines/...">` bez sprite izrezivanja i apsolutnog pomicanja
+- Slike su provjerene dekoderom i dostupne preko GitHub Pages putanje
+- Sve kartice sprava uključene su u novi v1.2.3 offline PWA cache
+- Zadržan je redoslijed sadržaja: ilustracija, prepoznavanje sprave, alternativni nazivi, podešavanje, pravilno izvođenje i upozorenje
+
 ## v1.2.2 — 2026-08-11
 
 ### Poboljšano

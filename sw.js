@@ -1,5 +1,31 @@
-const CACHE='training-tracker-v1.2.2';
-const ASSETS=['./','./index.html','./styles.css?v=1.2.2','./pwa.css?v=1.2.2','./app.js?v=1.2.2','./machine-info.js?v=1.2.2','./manifest.webmanifest?v=1.2.2','./icons/icon.svg','./assets/machine-cards-atlas.webp'];
+const CACHE='training-tracker-v1.2.3';
+const ASSETS=[
+ './',
+ './index.html',
+ './styles.css?v=1.2.3',
+ './pwa.css?v=1.2.3',
+ './app.js?v=1.2.3',
+ './machine-info.js?v=1.2.3',
+ './manifest.webmanifest?v=1.2.3',
+ './icons/icon.svg',
+ './assets/machines/abdominal-crunch.webp',
+ './assets/machines/cable-face-pull.webp',
+ './assets/machines/calf-raise.webp',
+ './assets/machines/chest-press.webp',
+ './assets/machines/elliptical.webp',
+ './assets/machines/hip-abductor.webp',
+ './assets/machines/incline-chest-press.webp',
+ './assets/machines/lat-pulldown.webp',
+ './assets/machines/lateral-raise.webp',
+ './assets/machines/leg-curl.webp',
+ './assets/machines/leg-extension.webp',
+ './assets/machines/leg-press.webp',
+ './assets/machines/pec-deck.webp',
+ './assets/machines/reverse-pec-deck.webp',
+ './assets/machines/seated-row.webp',
+ './assets/machines/shoulder-press.webp',
+ './assets/machines/treadmill.webp'
+];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener('activate',e=>e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))])));
 self.addEventListener('message',e=>{if(e.data&&e.data.type==='SKIP_WAITING')self.skipWaiting()});
