@@ -10,9 +10,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>Evelin + Silvio | Trening</title>
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
-  <link rel="manifest" href="manifest.webmanifest?v=1.2.0" />
-  <link rel="stylesheet" href="styles.css?v=1.2.0" />
-  <link rel="stylesheet" href="pwa.css?v=1.2.0" />
+  <link rel="manifest" href="manifest.webmanifest?v=1.2.1" />
+  <link rel="stylesheet" href="styles.css?v=1.2.1" />
+  <link rel="stylesheet" href="pwa.css?v=1.2.1" />
 </head>
 <body>
   <div class="app-shell">
@@ -26,21 +26,18 @@
         <div class="section-heading"><div><p class="eyebrow">APLIKACIJA</p><h2>Podaci i postavke</h2></div></div>
         <div class="card app-card"><img class="app-icon-preview" src="icons/icon.svg" alt="Ikona aplikacije"><div><h3 style="margin-bottom:4px">Evelin + Silvio Training</h3><p class="muted" style="margin:0">Trening na spravama · PWA</p></div></div>
         <div class="card install-panel"><h3>Instaliraj aplikaciju</h3><p class="muted">Instalacijom se aplikacija otvara kao samostalna Android aplikacija, bez adresne trake preglednika.</p><button id="installAppBtn" class="primary-btn install-btn" hidden>Instaliraj aplikaciju</button><p id="installHint" class="muted small-note">Provjeravam može li se aplikacija instalirati…</p></div>
-        <div class="card update-panel"><h3>O aplikaciji</h3><div class="app-meta"><div class="app-meta-row"><span>Verzija</span><strong>v1.2.0</strong></div><div class="app-meta-row"><span>Način rada</span><strong>Offline podrška</strong></div><div class="app-meta-row"><span>Spremanje</span><strong>Lokalno na uređaju</strong></div><div class="app-meta-row"><span>Status</span><strong id="updateStatus" class="status-ok">Aplikacija je ažurna</strong></div></div><div class="app-actions"><button id="checkUpdateBtn" class="secondary-btn">Provjeri novu verziju</button><button id="refreshAppBtn" class="secondary-btn">Osvježi aplikaciju</button></div></div>
+        <div class="card update-panel"><h3>O aplikaciji</h3><div class="app-meta"><div class="app-meta-row"><span>Verzija</span><strong>v1.2.1</strong></div><div class="app-meta-row"><span>Način rada</span><strong>Offline podrška</strong></div><div class="app-meta-row"><span>Spremanje</span><strong>Lokalno na uređaju</strong></div><div class="app-meta-row"><span>Status</span><strong id="updateStatus" class="status-ok">Aplikacija je ažurna</strong></div></div><div class="app-actions"><button id="checkUpdateBtn" class="secondary-btn">Provjeri novu verziju</button><button id="refreshAppBtn" class="secondary-btn">Osvježi aplikaciju</button></div></div>
         <div class="card settings-grid"><div><h3>Izvoz</h3><p class="muted">Spremi treninge kao JSON.</p><button id="exportBtn" class="secondary-btn">Izvezi podatke</button></div><div><h3>Uvoz</h3><p class="muted">Vrati spremljenu kopiju.</p><label class="file-btn">Odaberi JSON<input id="importInput" type="file" accept="application/json" hidden /></label></div></div>
         <div class="card note-card"><h3>Napomena</h3><p>Odaberi težinu s kojom sva ponavljanja možeš izvesti mirno i pravilno. Ne trenirati do otkaza. Stani ako osjetiš oštru ili neuobičajenu bol.</p></div>
-        <p class="app-version">Evelin + Silvio Training · <strong>v1.2.0</strong></p>
+        <p class="app-version">Evelin + Silvio Training · <strong>v1.2.1</strong></p>
       </section>
     </main>
   </div>
   <div id="updateBanner" class="update-banner" hidden><div><strong>Dostupna je nova verzija</strong><p class="muted">Osvježi aplikaciju bez gubitka spremljenih treninga.</p></div><button id="applyUpdateBtn" class="primary-btn">Osvježi</button></div>
   <div id="toast" class="toast"></div>
-  <script src="app.js?v=1.2.0"></script>
-  <script src="machine-info.js?v=1.2.0"></script>
+  <script src="app.js?v=1.2.1"></script>
+  <script src="machine-info.js?v=1.2.1"></script>
   <script>
-    // Svaki trening se uvijek prikazuje: zagrijavanje → vježbe snage → smirivanje.
-    // Cardio stavke (sets = 0) služe kao zagrijavanje/smirivanje. Ako jedna ili obje
-    // nedostaju, aplikacija ih automatski nadopunjuje.
     (function normalizeWorkoutOrder(){
       const fallbackName='Traka za trčanje / orbitrek';
       Object.keys(PROGRAM).forEach(personKey=>{
@@ -58,7 +55,7 @@
       render();
     })();
 
-    const APP_VERSION='1.2.0';
+    const APP_VERSION='1.2.1';
     let deferredInstallPrompt=null, waitingWorker=null;
     const installBtn=document.getElementById('installAppBtn'), installHint=document.getElementById('installHint');
     const isStandalone=window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
@@ -69,7 +66,7 @@
     function showUpdate(worker){waitingWorker=worker;document.getElementById('updateBanner').hidden=false;document.getElementById('updateStatus').textContent='Nova verzija dostupna'}
     document.getElementById('applyUpdateBtn').onclick=()=>{if(waitingWorker)waitingWorker.postMessage({type:'SKIP_WAITING'});else location.reload()};
     document.getElementById('refreshAppBtn').onclick=()=>location.reload();
-    if('serviceWorker' in navigator){let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});navigator.serviceWorker.register('sw.js?v=1.2.0',{updateViaCache:'none'}).then(reg=>{if(reg.waiting)showUpdate(reg.waiting);reg.addEventListener('updatefound',()=>{const w=reg.installing;if(!w)return;w.addEventListener('statechange',()=>{if(w.state==='installed'&&navigator.serviceWorker.controller)showUpdate(w)})});document.getElementById('checkUpdateBtn').onclick=async()=>{document.getElementById('updateStatus').textContent='Provjeravam…';await reg.update();setTimeout(()=>{if(!reg.waiting){document.getElementById('updateStatus').textContent='Aplikacija je ažurna'}},1200)}}).catch(()=>{document.getElementById('updateStatus').textContent='Provjera nije uspjela'})}
+    if('serviceWorker' in navigator){let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});navigator.serviceWorker.register('sw.js?v=1.2.1',{updateViaCache:'none'}).then(reg=>{if(reg.waiting)showUpdate(reg.waiting);reg.addEventListener('updatefound',()=>{const w=reg.installing;if(!w)return;w.addEventListener('statechange',()=>{if(w.state==='installed'&&navigator.serviceWorker.controller)showUpdate(w)})});document.getElementById('checkUpdateBtn').onclick=async()=>{document.getElementById('updateStatus').textContent='Provjeravam…';await reg.update();setTimeout(()=>{if(!reg.waiting){document.getElementById('updateStatus').textContent='Aplikacija je ažurna'}},1200)}}).catch(()=>{document.getElementById('updateStatus').textContent='Provjera nije uspjela'})}
   </script>
 </body>
 </html>
