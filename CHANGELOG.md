@@ -1,83 +1,47 @@
 # Changelog
 
-## v1.2.4 — 2026-08-11
+## v1.3.0 — 2026-08-11
 
-### Ispravljeno
-- Unos težine i ponavljanja više ne iscrtava cijeli popis nakon svake znamenke pa mobilna tipkovnica ostaje otvorena
-- Označavanje dovršenih serija i cardio vježbi ažurira napredak bez gubitka fokusa
-- Nedovršeni treninzi automatski se spremaju lokalno zasebno za Evelin i Silvija te za treninge A, B i C
-- Privremeni unos ostaje sačuvan nakon zatvaranja ili ponovnog otvaranja aplikacije sve dok se trening ne spremi
-- Putanje ilustracija usklađene su s offline cacheom
+### Dodano
+- Prikaz rezultata iste serije iz prethodnog treninga iste osobe, treninga i vježbe
+- Sažetak nakon spremanja: završene serije, volumen, usporedba, napredak, rekordi i motivacijska poruka
+- Novi glavni tab **Napredak** s osobnim statistikama, grafom radne težine/volumena i treninzima po tjednu
+- Informativne double-progression preporuke s različitim najmanjim korakom po vježbi
+- 14 osobnih milestones/achievements odvojeno za Evelin i Silvija, s datumom prvog otključavanja
+- Podatkovna schema v2 u JSON izvozu uz kompatibilan uvoz v1.2.4 backupa
+
+### Poboljšano
+- Volumen se računa isključivo iz označenih završenih serija; cardio je isključen
+- Plate-loaded sprave i dalje bilježe samo masu dodanih ploča
+- Grafovi su responzivni i ne zahtijevaju horizontalno pomicanje stranice
+- Zadržano automatsko spremanje drafta i unos bez ponovnog renderiranja liste tijekom tipkanja
+- Offline cache, cache-busting i update flow podignuti na v1.3.0
+
+## v1.2.4 — 2026-08-11
+- Ispravljen unos višeznamenkastih brojeva na Androidu bez zatvaranja tipkovnice
+- Automatsko lokalno spremanje nedovršenog treninga zasebno po osobi i treningu
+- Zadržavanje drafta nakon zatvaranja i ponovnog otvaranja aplikacije
 
 ## v1.2.3 — 2026-08-11
-
-### Ispravljeno
-- Oštećeni i nedekodirajući WebP atlas zamijenjen je sa 17 zasebnih WebP ilustracija sprava
-- Info prozor sada koristi običan `<img src="assets/machines/...">` bez sprite izrezivanja i apsolutnog pomicanja
-- Slike su provjerene dekoderom i dostupne preko GitHub Pages putanje
-- Sve kartice sprava uključene su u novi v1.2.3 offline PWA cache
-- Zadržan je redoslijed sadržaja: ilustracija, prepoznavanje sprave, alternativni nazivi, podešavanje, pravilno izvođenje i upozorenje
+- 17 zasebnih WebP ilustracija sprava i pouzdan prikaz u info prozoru/offline cacheu
 
 ## v1.2.2 — 2026-08-11
-
-### Poboljšano
-- Jednostavne SVG skice zamijenjene su originalnim ilustriranim karticama sprava iz prvih generiranih kolaža
-- Kartice su optimizirane u jedan WebP atlas i prikazuju se preko običnog `<img>` elementa radi pouzdanosti na Androidu
-- Zadržani su rubrika „Što tražiti u teretani”, alternativni nazivi i postojeće upute za pravilno izvođenje
-- Dodana je ilustrirana kartica za Abdominal Crunch Machine u istom vizualnom stilu
-- Novi vizuali uključeni su u offline PWA cache
+- Ilustrirane kartice sprava i optimizirani vizuali
 
 ## v1.2.1 — 2026-08-11
-
-### Ispravljeno
-- Skice sprava sada se pouzdano prikazuju na Androidu i u instaliranoj PWA aplikaciji
-- Uklonjen problem s praznim bijelim poljem kod WebP sprite atlasa
-- Skice su prebačene na zaseban SVG sustav koji radi oštro na svim gustoćama zaslona i offline
-- Ispravljena metadata datoteka verzije koja je još prikazivala staru verziju
+- Ispravljen prikaz skica sprava na Androidu i metadata verzije
 
 ## v1.2.0 — 2026-08-11
-
-### Dodano
-- Vizualne skice sprava u info prozoru za sve vježbe u programu
-- Rubrika „Što tražiti u teretani” uz svaku spravu
-- Alternativni nazivi sprava na hrvatskom i engleskom radi lakšeg prepoznavanja
-- Dvostruki vizual za kombiniranu cardio stavku traka za trčanje / orbitrek
-
-### Poboljšano
-- Info prozor sada prvo pomaže prepoznati spravu, a zatim prikazuje podešavanje, izvedbu i upozorenja
-- Skice su spojene u optimizirani WebP atlas radi bržeg učitavanja i manjeg zauzeća
-- Atlas sprava uključen je u offline PWA cache
+- Vizualne skice, alternativni nazivi i vodič za prepoznavanje sprava
 
 ## v1.1.1 — 2026-08-11
-
-### Ispravljeno
-- Zagrijavanje je uvijek prva stavka treninga
-- Smirivanje je uvijek posljednja stavka treninga, neovisno o dodavanju ili uklanjanju vježbi
-- Ako završno smirivanje nedostaje, aplikacija ga automatski dodaje
+- Stabiliziran redoslijed zagrijavanja, vježbi snage i smirivanja
 
 ## v1.1.0 — 2026-08-11
-
-### Dodano
-- PWA instalacijski tijek za Android
-- Nova E+S ikona aplikacije
-- Gumb „Instaliraj aplikaciju” u tabu Podaci
-- Vidljiv broj verzije u aplikaciji
-- Sekcija „O aplikaciji” sa statusom verzije i načina rada
-- Ručna provjera nove verzije
-- Obavijest kada je dostupna nova verzija i gumb za osvježavanje
-- Dodatne PWA manifest postavke: id, scope, orientation i kategorije
-
-### Poboljšano
-- Offline cache i update flow
-- Automatsko preuzimanje nove verzije bez brisanja podataka treninga
-- Mobilni prikaz postavki aplikacije
+- PWA instalacija, ikona, verzija, ručna provjera nadogradnje i offline update flow
 
 ## v1.0.1 — 2026-08-10
-- dodan info gumb uz svaku vježbu s uputama za podešavanje sprave i pravilno izvođenje
-- dodano označavanje završetka za treadmill/orbitrek
-- napredak treninga sada uključuje i cardio stavke
-- ispravljen PWA cache kako bi nove verzije pouzdanije stizale na Android
-- dodan prikaz verzije u aplikaciji
+- Info upute, cardio završetak, PWA cache i prikaz verzije
 
 ## v1.0.0 — 2026-08-10
-- početna stabilna verzija aplikacije
+- Početna stabilna verzija aplikacije
