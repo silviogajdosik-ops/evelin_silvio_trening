@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.1.1 — 2026-08-11
+
+### Ispravljeno
+- Zagrijavanje je uvijek prva stavka treninga.
+- Smirivanje je uvijek zadnja stavka treninga.
+- Dodatne Silvijeve vježbe više se ne prikazuju nakon završne trake za trčanje.
+- Ako zagrijavanje ili smirivanje nedostaje u planu, aplikacija ga automatski nadopunjuje.
+- Redoslijed ostaje ispravan i nakon budućeg dodavanja ili uklanjanja vježbi snage.
+
 ## v1.1.0 — 2026-08-11
 
 ### Dodano
