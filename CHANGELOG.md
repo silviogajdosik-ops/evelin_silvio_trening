@@ -1,13 +1,24 @@
 # Changelog
 
+## v1.2.0 — 2026-08-11
+
+### Dodano
+- Vizualne skice sprava u info prozoru za sve vježbe u programu
+- Rubrika „Što tražiti u teretani” uz svaku spravu
+- Alternativni nazivi sprava na hrvatskom i engleskom radi lakšeg prepoznavanja
+- Dvostruki vizual za kombiniranu cardio stavku traka za trčanje / orbitrek
+
+### Poboljšano
+- Info prozor sada prvo pomaže prepoznati spravu, a zatim prikazuje podešavanje, izvedbu i upozorenja
+- Skice su spojene u optimizirani WebP atlas radi bržeg učitavanja i manjeg zauzeća
+- Atlas sprava uključen je u offline PWA cache
+
 ## v1.1.1 — 2026-08-11
 
 ### Ispravljeno
-- Zagrijavanje je uvijek prva stavka treninga.
-- Smirivanje je uvijek zadnja stavka treninga.
-- Dodatne Silvijeve vježbe više se ne prikazuju nakon završne trake za trčanje.
-- Ako zagrijavanje ili smirivanje nedostaje u planu, aplikacija ga automatski nadopunjuje.
-- Redoslijed ostaje ispravan i nakon budućeg dodavanja ili uklanjanja vježbi snage.
+- Zagrijavanje je uvijek prva stavka treninga
+- Smirivanje je uvijek posljednja stavka treninga, neovisno o dodavanju ili uklanjanju vježbi
+- Ako završno smirivanje nedostaje, aplikacija ga automatski dodaje
 
 ## v1.1.0 — 2026-08-11
 
