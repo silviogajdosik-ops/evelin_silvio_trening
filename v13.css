@@ -1,0 +1,1 @@
+.weight-cell{min-width:0}.weight-cell .set-weight{width:100%;min-width:0}.previous-result{display:block!important;grid-column:auto!important;color:var(--muted);font-size:.68rem;line-height:1.2;margin:3px 0 0!important}.summary-stats{grid-template-columns:repeat(3,1fr)}@media(max-width:640px){.summary-stats{grid-template-columns:1fr 1fr}}
