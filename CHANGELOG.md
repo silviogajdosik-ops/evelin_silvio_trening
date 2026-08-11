@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.3.1 — 2026-08-11
+
+### Ispravljeno
+- Prethodni rezultat sada se prikazuje zasebno uz svaku seriju, a ne samo uz prvu seriju vježbe
+- Zadržan je v1.2.4 način unosa bez ponovnog renderiranja liste tijekom tipkanja, kako se Android tipkovnica ne bi zatvarala
+- PWA cache i cache-busting podignuti su na v1.3.1
+
 ## v1.3.0 — 2026-08-11
 
 ### Dodano
