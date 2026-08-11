@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.2.2 — 2026-08-11
+
+### Poboljšano
+- Jednostavne SVG skice zamijenjene su originalnim ilustriranim karticama sprava iz prvih generiranih kolaža
+- Kartice su optimizirane u jedan WebP atlas i prikazuju se preko običnog `<img>` elementa radi pouzdanosti na Androidu
+- Zadržani su rubrika „Što tražiti u teretani”, alternativni nazivi i postojeće upute za pravilno izvođenje
+- Dodana je ilustrirana kartica za Abdominal Crunch Machine u istom vizualnom stilu
+- Novi vizuali uključeni su u offline PWA cache
+
 ## v1.2.1 — 2026-08-11
 
 ### Ispravljeno

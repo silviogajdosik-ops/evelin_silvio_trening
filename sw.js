@@ -1,5 +1,5 @@
-const CACHE='training-tracker-v1.2.1';
-const ASSETS=['./','./index.html','./styles.css?v=1.2.1','./pwa.css?v=1.2.1','./app.js?v=1.2.1','./machine-info.js?v=1.2.1','./manifest.webmanifest?v=1.2.1','./icons/icon.svg','./assets/machines.svg'];
+const CACHE='training-tracker-v1.2.2';
+const ASSETS=['./','./index.html','./styles.css?v=1.2.2','./pwa.css?v=1.2.2','./app.js?v=1.2.2','./machine-info.js?v=1.2.2','./manifest.webmanifest?v=1.2.2','./icons/icon.svg','./assets/machine-cards-atlas.webp'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener('activate',e=>e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))])));
 self.addEventListener('message',e=>{if(e.data&&e.data.type==='SKIP_WAITING')self.skipWaiting()});
