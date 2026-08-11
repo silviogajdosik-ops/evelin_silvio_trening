@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.3.2 — 2026-08-11
+
+### Ispravljeno
+- Prethodni rezultat ponovno se prikazuje uz svaku pojedinu seriju
+- Serija se određuje iz postojećeg `data-k` ključa inputa umjesto krhkog DOM/CSS selektora
+- Nije mijenjana logika unosa ni event listeneri, pa se zadržava zaštita od zatvaranja Android tipkovnice
+- PWA cache podignut je na v1.3.2
+
 ## v1.3.1 — 2026-08-11
 
 ### Ispravljeno
