@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.4.1 — 2026-08-13
+
+### Ispravljeno
+- Odabrani trening A, B ili C ponovno se jasno označava nakon promjene
+- Otvaranje fokus ekrana koristi stabilan click handler na popisu i radi nakon svakog ponovnog iscrtavanja kartica
+- PWA cache i cache-busting podignuti su na v1.4.1
+
 ## v1.4.0 — 2026-08-13
 
 ### Dodano

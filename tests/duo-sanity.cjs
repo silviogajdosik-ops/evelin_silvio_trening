@@ -13,6 +13,10 @@ const assert = require('node:assert/strict');
 
   assert.equal(await page.locator('#saveWorkoutBtn').textContent(), 'Završi trening');
   assert.ok(await page.locator('.duo-machine-card').count() > 0);
+  await page.locator('.workout-chip[data-workout="B"]').click();
+  assert.equal(await page.locator('.workout-chip.active').getAttribute('data-workout'), 'B');
+  await page.locator('.workout-chip[data-workout="A"]').click();
+  assert.equal(await page.locator('.workout-chip.active').getAttribute('data-workout'), 'A');
   await page.locator('.duo-machine-card').first().click();
   assert.equal(await page.locator('.duo-person h3').first().textContent(), 'Silvio');
 

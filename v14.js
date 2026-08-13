@@ -48,7 +48,6 @@ function renderDuo(){
  const strength=strengthNames().map((name,i)=>{const e=ensureExercise(name),sd=e.silvio?.sets||[],ed=e.evelin?.sets||[],done=[...sd,...ed].filter(x=>x.d).length,total=sd.length+ed.length;return `<button class="exercise-card duo-machine-card" data-focus="${esc(name)}"><span class="exercise-index">${offset+i+1}</span><span class="exercise-title"><strong>${esc(name)}</strong><small>${sd.length} Silvio · ${ed.length?ed.length+' Evelin':'Dodaj Evelin za danas'}</small></span><span class="machine-progress ${done===total&&total?'complete':''}">${done}/${total}</span></button>`}).join('');
  list.innerHTML=cardio+strength;
  $$('.duo-cardio').forEach(x=>x.oninput=()=>{const v=d.cardio[x.dataset.index]||(d.cardio[x.dataset.index]={});v.d=x.checked;saveDuo();const card=x.closest('.cardio-card');card.classList.toggle('exercise-complete',x.checked);x.nextElementSibling.textContent=x.checked?'Završeno ✓':'Označi kada završite';duoCompletion()});
- $$('[data-focus]').forEach(x=>x.onclick=()=>openFocus(x.dataset.focus));
  duoCompletion();weekCount();
 }
 function personFocus(name,p){
@@ -86,6 +85,7 @@ function finishDuo(){const date=$('#sessionDate').value||today(),sessions=['silv
 $('#exportBtn').onclick=()=>{const out={schemaVersion:SCHEMA_VERSION,exportedAt:new Date().toISOString(),sessions:db.sessions,achievements:db.achievements,programAdditions:db.programAdditions||{evelin:{}}};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(out,null,2)],{type:'application/json'}));a.download=`trening-backup-${today()}.json`;a.click()};
 $('#importInput').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!Array.isArray(x.sessions))throw 0;db={...x,schemaVersion:SCHEMA_VERSION,achievements:x.achievements||{evelin:{},silvio:{}},programAdditions:x.programAdditions||{evelin:{}}};saveDb();renderDuo();renderHistory();renderProgress();toast('Podaci uvezeni.')}catch{toast('Neispravna JSON datoteka.')}};r.readAsText(f)};
 $('#saveWorkoutBtn').onclick=finishDuo;
-$$('.workout-chip').forEach(b=>b.onclick=()=>{workout=b.dataset.workout;localStorage.setItem('training.workout',workout);renderDuo()});
+$('#exerciseList').addEventListener('click',event=>{const card=event.target.closest('[data-focus]');if(card)openFocus(card.dataset.focus)});
+$$('.workout-chip').forEach(b=>b.onclick=()=>{workout=b.dataset.workout;localStorage.setItem('training.workout',workout);$$('.workout-chip').forEach(chip=>chip.classList.toggle('active',chip.dataset.workout===workout));renderDuo()});
 $$('.tab').forEach(b=>{const old=b.onclick;b.onclick=()=>{old?.();document.body.classList.toggle('duo-workout',b.dataset.tab==='workout');if(b.dataset.tab==='workout')renderDuo()}});
 renderDuo();
