@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.4.0 — 2026-08-13
+
+### Dodano
+- Zajednički Duo trening s popisom sprava i fokus ekranom pojedine vježbe
+- Silvio je uvijek prvi, a Evelin je prikazana ispod njega na fokus ekranu
+- Dodatne serije za obje osobe, s kopiranjem zadnje težine i ponavljanja te brisanjem samo dodatnih serija
+- Privremeno dodavanje Evelin na Silviove vježbe i mogućnost trajnog dodavanja iz sažetka
+- Odvojene spremljene sesije i odvojeni blokovi sažetka za Silvija i Evelin
+
+### Poboljšano
+- Cardio ostaje brz checkbox izravno na popisu
+- Završene serije jasno su označene bez ponovnog renderiranja liste tijekom unosa
+- "Prošli put" prikazuje samo težinu i ponavljanja po seriji
+- Zadržana je schema v2, postojeći localStorage podaci, draftovi te kompatibilan izvoz i uvoz
+- PWA cache i cache-busting podignuti su na v1.4.0
+
 ## v1.3.2 — 2026-08-11
 
 ### Ispravljeno

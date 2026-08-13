@@ -1,0 +1,25 @@
+body.duo-workout .person-switch{display:none}
+body.duo-workout #loadPreviousBtn{display:none}
+.duo-machine-card{width:100%;display:flex;align-items:center;gap:14px;text-align:left;color:inherit;border:1px solid var(--border);cursor:pointer}
+.duo-machine-card .exercise-title{display:flex;flex:1;flex-direction:column;gap:4px}
+.duo-machine-card small{color:var(--muted)}
+.machine-progress{min-width:48px;padding:8px;border-radius:999px;background:var(--surface2);text-align:center;font-weight:800}
+.machine-progress.complete{background:#d1fae5;color:#047857}
+.focus-sheet{max-height:92vh;overflow:auto}
+.duo-person{padding:16px 0;border-top:1px solid var(--border)}
+.duo-person.silvio{border-top:0}
+.person-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.person-heading h3{margin:0}
+.focus-sets{display:grid;gap:8px}
+.focus-set{display:grid;grid-template-columns:30px 1fr 1fr 42px 32px;gap:7px;align-items:end;padding:9px;border:1px solid var(--border);border-radius:12px;transition:.15s}
+.focus-set.set-complete{background:#d1fae5;border-color:#34d399;box-shadow:inset 4px 0 #059669}
+.focus-set label{font-size:11px;color:var(--muted)}
+.focus-set input[type=number]{width:100%;box-sizing:border-box;margin-top:3px}
+.focus-set .done-label{align-self:center;font-size:18px;color:#047857}
+.set-label{align-self:center;font-weight:800}
+.delete-set{border:0;background:#fee2e2;color:#b91c1c;border-radius:9px;height:34px;font-size:20px}
+.focus-set .previous-result{grid-column:2/-1;color:var(--muted)}
+.add-set,.add-evelin{margin-top:10px}
+.duo-summary{padding:12px 0;border-bottom:1px solid var(--border)}
+.permanent-add{width:100%;margin-top:8px}
+@media(max-width:480px){.focus-set{grid-template-columns:25px minmax(62px,1fr) minmax(62px,1fr) 38px 30px;padding:7px;gap:5px}}
