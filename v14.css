@@ -2,10 +2,13 @@ body.duo-workout .person-switch{display:none}
 body.duo-workout #loadPreviousBtn{display:none}
 .duo-machine-card{width:100%;display:flex;align-items:center;gap:14px;text-align:left;color:inherit;border:1px solid var(--border);cursor:pointer}
 .duo-machine-card .exercise-title{display:flex;flex:1;flex-direction:column;gap:4px}
+.duo-machine-card .exercise-name-row{display:flex;align-items:center;gap:8px}
 .duo-machine-card small{color:var(--muted)}
+.duo-info,.focus-info{flex:0 0 auto}
 .machine-progress{min-width:48px;padding:8px;border-radius:999px;background:var(--surface2);text-align:center;font-weight:800}
 .machine-progress.complete{background:#d1fae5;color:#047857}
 .focus-sheet{max-height:92vh;overflow:auto}
+.focus-title-row{display:flex;align-items:center;gap:8px}.focus-title-row h2{margin:0}
 .duo-person{padding:16px 0;border-top:1px solid var(--border)}
 .duo-person.silvio{border-top:0}
 .person-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
