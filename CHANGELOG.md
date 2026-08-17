@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.4.2 — 2026-08-17
+
+### Ispravljeno
+- Vraćen info gumb uz svaku spravu u Duo popisu
+- Info gumb je dostupan i u fokus ekranu sprave
+- Otvaranje info prikaza više ne otvara istodobno fokus ekran vježbe
+- Zadržane su postojeće slike i detaljni opisi sprava iz machine-info prikaza
+- PWA cache i cache-busting podignuti su na v1.4.2
+
 ## v1.4.1 — 2026-08-13
 
 ### Ispravljeno
